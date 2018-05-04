@@ -1,12 +1,19 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-}
-
-/* Set padding to keep content from hitting the edges */
+﻿/* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.navbar {
+    position: relative;
+    background-color: #6493a2;
+    border-color: white;
+}
+
+footer {
+    background-color: #6493a2;
+    height: 200px;
+    text-align: center;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -21,4 +28,38 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.side-img {
+    width: 10%;
+    height: 100;
+    background-color: lightblue
+}
+
+.logo-img {
+    height: 200px;
+    width: 100%;
+    background-color: lightblue
+}
+
+.login-section {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.logo-section {
+    position: absolute;
+    top: 80px;
+    left: 300px;
+    font-size: 25px;
+}
+
+.menu-item {
+    font-size: 25px;
+    padding-right: 25px;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #e2f3f7;
 }
