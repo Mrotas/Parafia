@@ -9,11 +9,29 @@
 </head>
 <body>
     <span class="logo-section">Tu będzie logo</span>
-    <span class="login-section"><a href="#">Zaloguj</a></span>
+    @if (Request.IsAuthenticated)
+    {
+        @*<span class="login-section" style="padding-right: 60px"><a href="@Url.Action("Index", "Home")">@Session["Name"].ToString()</a></span>*@
+        <span class="login-section"><a href="@Url.Action("Logout", "Login")">Wyloguj</a></span>
+        <div id="sidebarMenu" class="sideMenu">
+            <button href="#" class="btn btn-default sidebar-menu-item">Kalendarz seminariów</button>
+            <button href="#" class="btn btn-default sidebar-menu-item">Dodaj ogłoszenie</button>
+            <button href="#" class="btn btn-default sidebar-menu-item">Służba sakralna</button>
+            <button href="#" class="btn btn-default sidebar-menu-item">Katalog parafian</button>
+            <button href="#" class="btn btn-default sidebar-menu-item">Zarządzaj kontami</button>
+            <script>
+                document.getElementsByTagName("body")[0].style.marginLeft = '180px';
+            </script>
+        </div>
+    }
+    else
+    {
+        <span class="login-section"><a href="@Url.Action("Login", "Login")">Zaloguj</a></span>
+    }
     <div class="logo-img"></div>
     <div style="display: flex;">
         <div class="side-img"></div>
-        <div>
+        <div style="width: 80%">
             <div class="navbar navbar-inverse navbar-fixed-top">
                 <div class="container">
                     <div class="navbar-header">
@@ -24,13 +42,18 @@
                         </button>
                     </div>
                     <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
-                            <li class="menu-item">@Html.ActionLink("Strona głowna", "Index", "Home")</li>
-                            <li class="menu-item">@Html.ActionLink("Ogłoszenia", "Index", "Home")</li>
-                            <li class="menu-item">@Html.ActionLink("Kancelaria", "Index", "Home")</li>
-                            <li class="menu-item">@Html.ActionLink("Datki", "Index", "Home")</li>
-                            <li class="menu-item">@Html.ActionLink("Wydarzenia", "Index", "Home")</li>
-                            <li class="menu-item">@Html.ActionLink("Kontakt", "Index", "Home")</li>
+                        <ul class="nav navbar-nav" id="mainMenu">
+                            @{string className = "menu-item";}
+                            @if (Request.IsAuthenticated)
+                            {
+                                className = "admin-menu-item";
+                            }
+                            <li class="@className">@Html.ActionLink("Strona głowna", "Index", "Home")</li>
+                            <li class="@className">@Html.ActionLink("Ogłoszenia", "Index", "Home")</li>
+                            <li class="@className">@Html.ActionLink("Kancelaria", "Index", "Home")</li>
+                            <li class="@className">@Html.ActionLink("Datki", "Index", "Home")</li>
+                            <li class="@className">@Html.ActionLink("Wydarzenia", "Index", "Home")</li>
+                            <li class="@className">@Html.ActionLink("Kontakt", "Index", "Home")</li>
                         </ul>
                     </div>
                 </div>
