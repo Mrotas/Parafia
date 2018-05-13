@@ -8,13 +8,12 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <span class="logo-section">Tu będzie logo</span>
     @if (Request.IsAuthenticated)
     {
         @*<span class="login-section" style="padding-right: 60px"><a href="@Url.Action("Index", "Home")">@Session["Name"].ToString()</a></span>*@
         <span class="login-section"><a href="@Url.Action("Logout", "Login")">Wyloguj</a></span>
         <div id="sidebarMenu" class="sideMenu">
-            <button href="#" class="btn btn-default sidebar-menu-item">Kalendarz seminariów</button>
+            <button href="#" class="btn btn-default sidebar-menu-item">Kalendarz sakramentów</button>
             <button href="#" class="btn btn-default sidebar-menu-item">Dodaj ogłoszenie</button>
             <button href="#" class="btn btn-default sidebar-menu-item">Służba sakralna</button>
             <button href="#" class="btn btn-default sidebar-menu-item">Katalog parafian</button>
@@ -28,11 +27,9 @@
     {
         <span class="login-section"><a href="@Url.Action("Login", "Login")">Zaloguj</a></span>
     }
-    <div class="logo-img"></div>
-    <div style="display: flex;">
-        <div class="side-img"></div>
-        <div style="width: 80%">
-            <div class="navbar navbar-inverse navbar-fixed-top">
+    <div style="display: flex; padding-left: 10%; padding-top: 10%">
+        <div>
+            <div class="navbar navbar-inverse navbar-fixed-top" style="margin-bottom: 0">
                 <div class="container">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -58,11 +55,10 @@
                     </div>
                 </div>
             </div>
-            <div class="container body-content">
+            <div class="container body-content" style="background-color: white;">
                 @RenderBody()
             </div>
         </div>
-        <div class="side-img"></div>
     </div>
     <footer>
         <div>Tu będzie stopka</div>
