@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Parafia.Models.User
+namespace Parafia.Models.Parafia
 {
     public class Login
     {
