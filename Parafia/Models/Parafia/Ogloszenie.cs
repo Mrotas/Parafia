@@ -20,7 +20,5 @@ namespace Parafia.Models.Parafia
 
         [MaxLength(1)]
         public byte[] Zdjecie { get; set; }
-
-        public virtual Ksiadz Ksiadz { get; set; }
     }
 }

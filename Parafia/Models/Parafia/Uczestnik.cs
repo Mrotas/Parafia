@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Parafia.Models.Parafia
 {
+
     [Table("UCZESTNIK")]
     public partial class Uczestnik
     {
@@ -12,8 +13,6 @@ namespace Parafia.Models.Parafia
         public Uczestnik()
         {
             Bierzmowania = new HashSet<Bierzmowanie>();
-            Slub = new HashSet<Slub>();
-            Chrzest = new HashSet<Chrzest>();
         }
 
         public int UczestnikId { get; set; }
@@ -37,13 +36,5 @@ namespace Parafia.Models.Parafia
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Bierzmowanie> Bierzmowania { get; set; }
-
-        public virtual Parafianin Parafianin { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Slub> Slub { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Chrzest> Chrzest { get; set; }
     }
 }
