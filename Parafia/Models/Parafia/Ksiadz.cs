@@ -12,11 +12,6 @@ namespace Parafia.Models.Parafia
         public Ksiadz()
         {
             Bierzmowania = new HashSet<Bierzmowanie>();
-            Chrzty = new HashSet<Chrzest>();
-            Koledy = new HashSet<Koleda>();
-            Ogloszenia = new HashSet<Ogloszenie>();
-            Parafianie = new HashSet<Parafianin>();
-            Sluby = new HashSet<Slub>();
         }
 
         public int KsiadzId { get; set; }
@@ -35,22 +30,5 @@ namespace Parafia.Models.Parafia
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Bierzmowanie> Bierzmowania { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Chrzest> Chrzty { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Koleda> Koledy { get; set; }
-
-        public virtual Parafianin Parafianin { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Ogloszenie> Ogloszenia { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Parafianin> Parafianie { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Slub> Sluby { get; set; }
     }
 }

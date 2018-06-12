@@ -10,6 +10,8 @@ namespace Parafia.Models.Parafia
 
         public int? ParafianinId { get; set; }
 
+        public int? IdParafianin { get; set; }
+
         [Required]
         [StringLength(1024)]
         public string Email { get; set; }
@@ -20,7 +22,5 @@ namespace Parafia.Models.Parafia
 
         [StringLength(1024)]
         public string Wiadomosc { get; set; }
-
-        public virtual Parafianin Parafianin { get; set; }
     }
 }

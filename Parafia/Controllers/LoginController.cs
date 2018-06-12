@@ -4,7 +4,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using Parafia.Models.Context;
-using Parafia.Models.User;
+using Parafia.Models.Parafia;
 
 namespace Parafia.Controllers
 {
@@ -20,9 +20,9 @@ namespace Parafia.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(Login login, string returnUrl = "")
         {
-            using (var db = new UserContext())
+            using (var db = new ParafiaContext())
             {
-                var user = db.Users.FirstOrDefault(x => x.Email == login.Email);
+                Uzytkownicy user = db.Uzytkownicy.FirstOrDefault(x => x.Email == login.Email);
                 if (user != null)
                 {
                     if (String.CompareOrdinal(login.Password, user.Haslo) == 0)
