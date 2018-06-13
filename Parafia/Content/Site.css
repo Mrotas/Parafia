@@ -16,8 +16,11 @@
 }
 
 footer {
+    position: absolute;
+    bottom:0;
     background-color: #6493a2;
-    height: 200px;
+    height: 60px;
+    width: 100%;
     text-align: center;
 }
 
@@ -29,12 +32,14 @@ footer {
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
-input,
+input {
+    max-width: 280px;
+}
+/*input,
 select,
 textarea {
     max-width: 280px;
-}
-
+}*/
 .side-img {
     width: 10%;
     height: 100;
@@ -101,4 +106,10 @@ textarea {
     color: #e2f3f7;
     font-size: 20px;
     white-space: normal;
+}
+
+.editor-field textarea {
+    width: 600px;
+    height: 150px;
+    resize: none;
 }

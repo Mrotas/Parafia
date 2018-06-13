@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Web.Mvc;
 
 namespace Parafia.Models.Parafia
 {
@@ -19,6 +20,7 @@ namespace Parafia.Models.Parafia
         public string Tresc { get; set; }
 
         [MaxLength(1)]
-        public byte[] Zdjecie { get; set; }
+        public string Zdjecie { get; set; }
+
     }
 }

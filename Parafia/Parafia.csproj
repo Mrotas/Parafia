@@ -175,6 +175,7 @@
     <Compile Include="Models\Parafia\Uzytkownicy.cs" />
     <Compile Include="Models\Parafia\Wydarzenie.cs" />
     <Compile Include="Models\Parafia\Zamowienie.cs" />
+    <Compile Include="Models\RichTextEditor\RichTextEditorViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -201,6 +202,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\script-custom-editor.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -221,6 +223,8 @@
     <Content Include="Views\Advertisements\Index.cshtml" />
     <Content Include="Views\Advertisements\Details.cshtml" />
     <Content Include="Views\Advertisements\Create.cshtml" />
+    <Content Include="Views\Advertisements\Edit.cshtml" />
+    <Content Include="Views\Advertisements\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
