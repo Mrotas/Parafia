@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Web.Mvc;
 
 namespace Parafia.Models.Parafia
 {
@@ -15,12 +16,21 @@ namespace Parafia.Models.Parafia
         public string Tytul { get; set; }
 
         [Required]
-        [StringLength(1024)]
+        [StringLength(2048)]
+        [Display(Name = "Wstêp")]
+        public string Tylko_Tresc { get; set; }
+
+        [Required]
+        [StringLength(2048)]
         public string Tresc { get; set; }
 
-        [MaxLength(1)]
-        public byte[] Zdjecie { get; set; }
+        [MaxLength(100)]
+        public string Zdjecie { get; set; }
 
-        public virtual Ksiadz Ksiadz { get; set; }
+        [Required]
+        [DataType(DataType.Date)]
+        [Display(Name = "Data wpisu")]
+        public System.DateTime Data { get; set; }
+
     }
 }

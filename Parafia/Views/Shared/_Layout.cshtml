@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - eParafia - zarządzanie</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -14,7 +14,7 @@
         <span class="login-section"><a href="@Url.Action("Logout", "Login")">Wyloguj</a></span>
         <div id="sidebarMenu" class="sideMenu">
             <button href="#" class="btn btn-default sidebar-menu-item">Kalendarz sakramentów</button>
-            <button href="#" class="btn btn-default sidebar-menu-item">Dodaj ogłoszenie</button>
+            <button href="#" class="btn btn-default sidebar-menu-item" onclick="location.href='@Url.Action("List", "Advertisements")'">Ogłoszenia</button>
             <button href="#" class="btn btn-default sidebar-menu-item">Służba sakralna</button>
             <button href="#" class="btn btn-default sidebar-menu-item">Katalog parafian</button>
             <button href="#" class="btn btn-default sidebar-menu-item">Zarządzaj kontami</button>
@@ -46,7 +46,7 @@
                                 className = "admin-menu-item";
                             }
                             <li class="@className">@Html.ActionLink("Strona głowna", "Index", "Home")</li>
-                            <li class="@className">@Html.ActionLink("Ogłoszenia", "Index", "Home")</li>
+                            <li class="@className">@Html.ActionLink("Ogłoszenia", "Index", "Advertisements")</li>
                             <li class="@className">@Html.ActionLink("Kancelaria", "Index", "Home")</li>
                             <li class="@className">@Html.ActionLink("Datki", "Index", "Home")</li>
                             <li class="@className">@Html.ActionLink("Wydarzenia", "Index", "Home")</li>
@@ -60,7 +60,7 @@
             </div>
         </div>
     </div>
-    <footer>
+    <!----><footer >
         <div>Tu będzie stopka</div>
     </footer>
     @Scripts.Render("~/bundles/jquery")

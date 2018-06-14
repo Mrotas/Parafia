@@ -151,6 +151,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Common\Cryptography.cs" />
+    <Compile Include="Controllers\AdvertisementsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
@@ -159,20 +160,22 @@
     <Compile Include="Models\Parafia\Bierzmowanie.cs" />
     <Compile Include="Models\Parafia\ChodziNa.cs" />
     <Compile Include="Models\Parafia\Chrzest.cs" />
-    <Compile Include="Models\Context\UserContext.cs" />
     <Compile Include="Models\Parafia\Datek.cs" />
+    <Compile Include="Models\Parafia\JestMalzonkiem_Swiadkiem.cs" />
+    <Compile Include="Models\Parafia\JestRodzicem_Chrzestnym.cs" />
     <Compile Include="Models\Parafia\Koleda.cs" />
     <Compile Include="Models\Parafia\Ksiadz.cs" />
+    <Compile Include="Models\Parafia\Login.cs" />
     <Compile Include="Models\Parafia\Ministrant.cs" />
     <Compile Include="Models\Context\ParafiaContext.cs" />
     <Compile Include="Models\Parafia\Ogloszenie.cs" />
     <Compile Include="Models\Parafia\Parafianin.cs" />
     <Compile Include="Models\Parafia\Slub.cs" />
     <Compile Include="Models\Parafia\Uczestnik.cs" />
-    <Compile Include="Models\User\Login.cs" />
-    <Compile Include="Models\User\Uzytkownicy.cs" />
+    <Compile Include="Models\Parafia\Uzytkownicy.cs" />
     <Compile Include="Models\Parafia\Wydarzenie.cs" />
     <Compile Include="Models\Parafia\Zamowienie.cs" />
+    <Compile Include="Models\RichTextEditor\RichTextEditorViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -199,6 +202,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\script-custom-editor.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -216,6 +220,13 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Advertisements\Index.cshtml" />
+    <Content Include="Views\Advertisements\Details.cshtml" />
+    <Content Include="Views\Advertisements\Create.cshtml" />
+    <Content Include="Views\Advertisements\List.cshtml" />
+    <Content Include="Views\Advertisements\Edit.cshtml" />
+    <Content Include="Views\Advertisements\CreateTemp.cshtml" />
+    <Content Include="Views\Advertisements\Read.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

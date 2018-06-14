@@ -9,6 +9,7 @@ namespace Parafia.Models.Parafia
     {
         [Key]
         [Column(Order = 0)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int KsiadzId { get; set; }
 
         [Key]
@@ -35,7 +36,5 @@ namespace Parafia.Models.Parafia
         public int IdMinistrant { get; set; }
 
         public int? IdMinistrant2 { get; set; }
-
-        public virtual Ksiadz Ksiadz { get; set; }
     }
 }
