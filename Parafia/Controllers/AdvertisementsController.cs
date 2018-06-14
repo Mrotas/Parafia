@@ -100,7 +100,7 @@ namespace Parafia.Controllers
         // POST: Advertisements/Edit/5
         [ValidateInput(false)]
         [HttpPost]
-        public ActionResult Edit(int id, Ogloszenie model)
+        public ActionResult Edit(int id, Ogloszenie model, HttpPostedFileBase file)
         {
             try
             {
@@ -110,6 +110,17 @@ namespace Parafia.Controllers
                 ogl.KsiadzId = model.KsiadzId;
                 ogl.Tytul = model.Tytul;
                 ogl.Tresc = model.Tresc;
+                if (file != null)
+                {
+                    var originalFilename = Path.GetFileName(file.FileName);
+                    string extension = Path.GetExtension(file.FileName);
+                    string fileId = Guid.NewGuid().ToString().Replace("-", "") + extension;
+                    var path = Path.Combine(Server.MapPath("~/Content/Images/"), fileId);
+                    file.SaveAs(path);
+                    model.Zdjecie = fileId;
+                    ogl.Zdjecie = model.Zdjecie;
+                }
+                
                 db.SaveChanges();
                 TempData["OK"] = "Edycja poprawna";
                 return RedirectToAction("List");

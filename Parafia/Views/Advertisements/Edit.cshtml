@@ -60,9 +60,16 @@
     <div class="form-group">
         @Html.LabelFor(model => model.Zdjecie, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.Zdjecie, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Zdjecie, "", new { @class = "text-danger" })
-            <img id="user_img" height="100" width="90" style="border:solid" / >
+
+            @if (!string.IsNullOrEmpty(Model.Zdjecie))
+            {
+                <img src="~/Content/Images/@Html.DisplayFor(model => model.Zdjecie)" height="100" width="90" style="border:solid" />
+            }
+            else
+            {
+                <img id="user_img" height="100" width="90" style="border:solid" / >
+            }
+            <input type="file" name="file" id="file" style="width: 100%;" onchange="show(this)" />
         </div>
     </div>
 
