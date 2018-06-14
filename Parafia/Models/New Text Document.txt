@@ -1,1 +1,0 @@
-This file was created because Git does not allow to commit empty directories.
