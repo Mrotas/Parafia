@@ -16,7 +16,12 @@ namespace Parafia.Models.Parafia
         public string Tytul { get; set; }
 
         [Required]
-        [StringLength(1024)]
+        [StringLength(2048)]
+        [Display(Name = "Wstêp")]
+        public string Tylko_Tresc { get; set; }
+
+        [Required]
+        [StringLength(2048)]
         public string Tresc { get; set; }
 
         [MaxLength(100)]

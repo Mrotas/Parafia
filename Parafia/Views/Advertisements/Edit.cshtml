@@ -46,7 +46,15 @@
             @Html.ValidationMessageFor(model => model.Tytul, "", new { @class = "text-danger" })
         </div>
     </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Tylko_Tresc, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10 editor-field">
+            @Html.TextAreaFor(model => model.Tylko_Tresc, new { placeholder = Html.DisplayNameFor(m => m.Tresc), @class = "form-control" })
 
+
+            @Html.ValidationMessageFor(model => model.Tresc, "", new { @class = "text-danger" })
+        </div>
+    </div>
     <div class="form-group">
         @Html.LabelFor(model => model.Tresc, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10 editor-field">
@@ -63,7 +71,7 @@
 
             @if (!string.IsNullOrEmpty(Model.Zdjecie))
             {
-                <img src="~/Content/Images/@Html.DisplayFor(model => model.Zdjecie)" height="100" width="90" style="border:solid" />
+                <img src="~/Content/Images/@Html.DisplayFor(model => model.Zdjecie)" height="60" width="120" style="border:solid" />
             }
             else
             {
@@ -80,7 +88,7 @@
     </div>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            
+
         </div>
     </div>
 </div>

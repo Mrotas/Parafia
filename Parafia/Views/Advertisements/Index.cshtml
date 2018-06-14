@@ -1,7 +1,47 @@
-﻿
+﻿@model IEnumerable<Parafia.Models.Parafia.Ogloszenie>
+
 @{
     ViewBag.Title = "Index";
 }
 
 <h3>Ogłoszenia prafialne</h3>
+  
+
+    @foreach (var item in Model)
+    {
+<div class="row">
+    @if (!string.IsNullOrEmpty(item.Zdjecie))
+    {
+        <div class="col-lg-2 ">
+            <img src="~/Content/Images/@Html.DisplayFor(modelItem => item.Zdjecie)" height="80" width="160" class="img-responsive" style="border:solid"/>
+        </div>
+        <div class="col-lg-10">
+            <h3>@Html.DisplayFor(modelItem => item.Tytul)</h3> <div class="">(@Html.DisplayFor(modelItem => item.Data))</div>
+            @Html.Raw(WebUtility.HtmlDecode(item.Tylko_Tresc))
+        </div>
+        <div class="col-lg-offset-10 col-lg-2">
+            @Html.ActionLink("więcej >", "Read", new { id = item.OgloszenieId })
+        </div>
+        
+    }
+    else
+    {
+
+        <div class="col-lg-offset-2 col-lg-10">
+            <h3>@Html.DisplayFor(modelItem => item.Tytul)</h3> <div class="">(@Html.DisplayFor(modelItem => item.Data))</div>
+            @Html.Raw(WebUtility.HtmlDecode(item.Tylko_Tresc))
+
+        </div>
+        <div class="col-lg-offset-10 col-lg-2">
+            @Html.ActionLink("więcej >", "Read", new { id = item.OgloszenieId })
+        </div>
+        
+    }
+
+</div>
+        <div class="col-lg-12"><hr /></div>    
+            
+       
+    }
+
 

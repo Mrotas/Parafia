@@ -114,3 +114,7 @@ textarea {
     height: 150px;
     resize: none;
 }
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}

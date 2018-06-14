@@ -35,7 +35,12 @@
                         @Html.ValidationMessageFor(model => model.Tytul, "", new { @class = "text-danger" })
                     </div>
                 </div>
-
+                <div class="form-group">
+                    <label class="control-label col-md-2"> Wstęp </label>
+                    <div class="col-md-10 editor-field">
+                        @Html.TextAreaFor(m => m.Tylko_Tresc, new { placeholder = Html.DisplayNameFor(m => m.Tylko_Tresc), @class = "form-control" })
+                    </div>
+                </div>
                 <div class="form-group">
                     <label class="control-label col-md-2"> Treść </label>
                     <div class="col-md-10 editor-field">
@@ -57,7 +62,7 @@
                 </div>
                 <div class="form-group">
                     <div class="col-md-offset-4 col-md-10" style="padding-left: 55px">
-                        
+
                     </div>
                 </div>
             }

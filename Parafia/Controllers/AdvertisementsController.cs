@@ -17,7 +17,10 @@ namespace Parafia.Controllers
         // GET: Advertisements
         public ActionResult Index()
         {
-            return View();
+            using (var db = new ParafiaContext())
+            {
+                return View(db.Ogloszenia.ToList());
+            }
         }
 
         // GET: Advertisements
@@ -109,6 +112,7 @@ namespace Parafia.Controllers
                 Ogloszenie ogl = db.Ogloszenia.Find(id);
                 ogl.KsiadzId = model.KsiadzId;
                 ogl.Tytul = model.Tytul;
+                ogl.Tylko_Tresc = model.Tylko_Tresc;
                 ogl.Tresc = model.Tresc;
                 if (file != null)
                 {
