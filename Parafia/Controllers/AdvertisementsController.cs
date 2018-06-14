@@ -153,6 +153,21 @@ namespace Parafia.Controllers
             }
         }
 
+        // GET: Advertisements/Edit/5
+        public ActionResult Read(int id)
+        {
+            if (Request.IsAuthenticated)
+            {
+                var db = new ParafiaContext();
+                Ogloszenie ogl = db.Ogloszenia.Find(id);
+                return View(ogl);
+            }
+            else
+            {
+                return RedirectToAction("Login", "Login");
+            }
+        }
+
     }
 
 }

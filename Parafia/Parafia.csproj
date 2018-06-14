@@ -226,6 +226,7 @@
     <Content Include="Views\Advertisements\List.cshtml" />
     <Content Include="Views\Advertisements\Edit.cshtml" />
     <Content Include="Views\Advertisements\CreateTemp.cshtml" />
+    <Content Include="Views\Advertisements\Read.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
