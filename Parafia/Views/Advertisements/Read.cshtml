@@ -1,0 +1,25 @@
+﻿@model Parafia.Models.Parafia.Ogloszenie
+
+@{
+    ViewBag.Title = "Read";
+}
+
+<h3>@Html.DisplayFor(model => model.Tytul)</h3><div class="">(@Html.DisplayFor(model => model.Data))</div>
+
+<div class="row">
+    <hr />
+    <dl class="dl-horizontal">
+
+
+        <div class="col-lg-offset-1 col-lg-3">
+            <img class="img-responsive" src="~/Content/Images/@Html.DisplayFor(model => model.Zdjecie)" width="360" height="180" style="border:solid"/>
+        </div>
+        <div class="col-lg-6">@Html.DisplayFor(model => model.Tylko_Tresc)</div>
+        <div class="col-lg-offset-1 col-lg-9"><p>@Html.Raw(WebUtility.HtmlDecode(Model.Tresc))</p></div>
+        
+        
+            <div class="col-lg-offset-4 col-lg-2 col-lg-offset-4"><p>@Html.ActionLink("powrót", "Index")</p></div>
+            
+</dl>
+</div>
+
