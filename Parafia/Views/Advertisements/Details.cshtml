@@ -1,7 +1,55 @@
-﻿
+﻿@model Parafia.Models.Parafia.Ogloszenie
+
 @{
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h3>Szczegóły ogłoszenia</h3>
 
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Tytul)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tytul)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tresc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tresc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Zdjecie)
+        </dt>
+
+        <dd>
+            
+            @if (!string.IsNullOrEmpty(model.Zdjecie))
+            {
+                <img src="~/Content/Images/@Html.DisplayFor(model => model.Zdjecie)" height="100" width="90" />
+            }
+        </dd>
+
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edycja", "Edit", new { id = model.OgloszenieId }) |
+    @Html.ActionLink("Powrót do listy", "List")
+</p>

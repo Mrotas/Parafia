@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Parafia.Models.Parafia.Ogloszenie>
+
+@{
+    ViewBag.Title = "Lista ogłoszeń";
+    int lp = 1;
+}
+
+<h3>Lista ogłoszeń</h3>
+@if (TempData["OK"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["OK"];
+    </div>
+}
+<p>
+    @Html.ActionLink("Dodaj nowe ogłoszenie", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            l.p.
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Data)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Zdjecie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tytul)
+        </th>
+
+
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.Label(lp.ToString())
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Data)
+        </td>
+        <td>
+            @if (!string.IsNullOrEmpty(item.Zdjecie))
+            {
+                <img src="~/Content/Images/@Html.DisplayFor(modelItem => item.Zdjecie)" height="100" width="90" />
+            }
+
+
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tytul)
+        </td>
+
+        <td>
+            @Html.ActionLink("Edycja", "Edit", new { id = item.OgloszenieId }) |
+            @Html.ActionLink("Szczegóły", "Details", new { id = item.OgloszenieId }) |
+            @Html.ActionLink("Usuń", "Delete", new { id = item.OgloszenieId })
+        </td>
+    </tr>
+        lp += 1;
+    }
+
+</table>

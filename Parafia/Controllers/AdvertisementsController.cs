@@ -33,7 +33,9 @@ namespace Parafia.Controllers
         // GET: Advertisements/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var db = new ParafiaContext();
+            Ogloszenie ogl = db.Ogloszenia.Find(id);
+            return View(ogl);
         }
 
         // GET: Advertisements/Create
@@ -50,6 +52,7 @@ namespace Parafia.Controllers
 
         // POST: Advertisements/Create
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Create(Ogloszenie model, HttpPostedFileBase file)
         {
             try
@@ -70,6 +73,7 @@ namespace Parafia.Controllers
                 
                 db.Ogloszenia.Add(model);
                 db.SaveChanges();
+                TempData["OK"] = "Dane zostały zapisane";
                 return RedirectToAction("List");
             }
             catch
@@ -83,7 +87,9 @@ namespace Parafia.Controllers
         {
             if (Request.IsAuthenticated)
             {
-                return View();
+                var db = new ParafiaContext();
+                Ogloszenie ogl = db.Ogloszenia.Find(id);
+                return View(ogl);
             }
             else
             {
@@ -92,14 +98,21 @@ namespace Parafia.Controllers
         }
 
         // POST: Advertisements/Edit/5
+        [ValidateInput(false)]
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Ogloszenie model)
         {
             try
             {
                 // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                var db = new ParafiaContext();
+                Ogloszenie ogl = db.Ogloszenia.Find(id);
+                ogl.KsiadzId = model.KsiadzId;
+                ogl.Tytul = model.Tytul;
+                ogl.Tresc = model.Tresc;
+                db.SaveChanges();
+                TempData["OK"] = "Edycja poprawna";
+                return RedirectToAction("List");
             }
             catch
             {
@@ -116,7 +129,7 @@ namespace Parafia.Controllers
                 Ogloszenie ogl = db.Ogloszenia.Find(id);
                 db.Ogloszenia.Remove(ogl);
                 db.SaveChanges();
-                ViewBag.Removed = "Dane zostały usuniete";
+                TempData["OK"] = "Dane zostały usuniete";
                 return RedirectToAction("List");
             }
             else
@@ -124,23 +137,6 @@ namespace Parafia.Controllers
                 return RedirectToAction("Login", "Login");
             }
         }
-
-        // POST: Advertisements/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
 
     }
 

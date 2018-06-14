@@ -19,8 +19,13 @@ namespace Parafia.Models.Parafia
         [StringLength(1024)]
         public string Tresc { get; set; }
 
-        [MaxLength(1)]
+        [MaxLength(100)]
         public string Zdjecie { get; set; }
+
+        [Required]
+        [DataType(DataType.Date)]
+        [Display(Name = "Data wpisu")]
+        public System.DateTime Data { get; set; }
 
     }
 }

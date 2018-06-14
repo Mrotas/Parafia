@@ -16,12 +16,13 @@
 }
 
 footer {
-    position: absolute;
+    position: fixed;
     bottom:0;
     background-color: #6493a2;
-    height: 60px;
+    height: 40px;
     width: 100%;
     text-align: center;
+  
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
